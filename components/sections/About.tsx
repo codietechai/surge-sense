@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Card } from '@/components/ui/card';
+import { Card } from "@/components/ui/card";
 import {
   Stethoscope,
   GraduationCap,
@@ -8,15 +8,15 @@ import {
   Heart,
   BookOpen,
   Users,
-} from 'lucide-react';
+} from "lucide-react";
 
 export default function About() {
   const interests = [
-    'General Surgery',
-    'Clinical Examination Skills',
-    'Case-based Learning',
-    'Surgical Instruments',
-    'Medical Career Guidance',
+    "General Surgery",
+    "Clinical Examination Skills",
+    "Case-based Learning",
+    "Surgical Instruments",
+    "Medical Career Guidance",
   ];
 
   return (
@@ -36,7 +36,7 @@ export default function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <Card className="p-8 border-2 hover:border-blue-200 transition-all hover:shadow-xl">
+          <Card>
             <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
               <Target className="w-7 h-7 text-white" />
             </div>
@@ -56,7 +56,7 @@ export default function About() {
             </div>
           </Card>
 
-          <Card className="p-8 border-2 hover:border-blue-200 transition-all hover:shadow-xl">
+          <Card>
             <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
               <Stethoscope className="w-7 h-7 text-white" />
             </div>
@@ -94,7 +94,9 @@ export default function About() {
                 className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all hover:-translate-y-1 group"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  {index === 0 && <Stethoscope className="w-6 h-6 text-white" />}
+                  {index === 0 && (
+                    <Stethoscope className="w-6 h-6 text-white" />
+                  )}
                   {index === 1 && <Heart className="w-6 h-6 text-white" />}
                   {index === 2 && <BookOpen className="w-6 h-6 text-white" />}
                   {index === 3 && <Target className="w-6 h-6 text-white" />}

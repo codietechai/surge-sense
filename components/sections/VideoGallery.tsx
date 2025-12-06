@@ -1,51 +1,55 @@
-'use client';
+"use client";
 
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { PlayCircle, Youtube, ExternalLink } from 'lucide-react';
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { PlayCircle, Youtube, ExternalLink } from "lucide-react";
+import VideoCarousel from "./video-carausel";
 
 export default function VideoGallery() {
   const videoCategories = [
     {
-      title: 'Surgical Instruments',
-      description: 'Complete guide to identifying and using surgical tools',
-      icon: '🔧',
+      title: "Surgical Instruments",
+      description: "Complete guide to identifying and using surgical tools",
+      icon: "🔧",
       videosCount: 50,
     },
     {
-      title: 'Operative Procedures',
-      description: 'Step-by-step surgical procedure demonstrations',
-      icon: '⚕️',
+      title: "Operative Procedures",
+      description: "Step-by-step surgical procedure demonstrations",
+      icon: "⚕️",
       videosCount: 120,
     },
     {
-      title: 'Clinical Examination',
-      description: 'Master physical examination techniques',
-      icon: '🩺',
+      title: "Clinical Examination",
+      description: "Master physical examination techniques",
+      icon: "🩺",
       videosCount: 80,
     },
     {
-      title: 'Case Presentations',
-      description: 'Real-world surgical case discussions',
-      icon: '📋',
+      title: "Case Presentations",
+      description: "Real-world surgical case discussions",
+      icon: "📋",
       videosCount: 100,
     },
     {
-      title: 'Exam Preparation',
-      description: 'Tips for MBBS, PG exams, and viva',
-      icon: '📚',
+      title: "Exam Preparation",
+      description: "Tips for MBBS, PG exams, and viva",
+      icon: "📚",
       videosCount: 90,
     },
     {
-      title: 'Pre & Post-Op Care',
-      description: 'Essential patient management protocols',
-      icon: '💊',
+      title: "Pre & Post-Op Care",
+      description: "Essential patient management protocols",
+      icon: "💊",
       videosCount: 60,
     },
   ];
 
   return (
-    <section id="videos" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section
+      id="videos"
+      className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold mb-4">
@@ -65,7 +69,7 @@ export default function VideoGallery() {
           >
             <Button
               size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white text-lg h-14 px-8"
+              className="bg-red-500 hover:bg-red-600 text-white text-lg h-14 px-8"
             >
               <Youtube className="w-5 h-5 mr-2" />
               Visit YouTube Channel
@@ -74,32 +78,11 @@ export default function VideoGallery() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videoCategories.map((category, index) => (
-            <Card
-              key={index}
-              className="p-6 hover:shadow-xl transition-all hover:-translate-y-2 group border-2 hover:border-blue-200"
-            >
-              <div className="text-5xl mb-4">{category.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {category.title}
-              </h3>
-              <p className="text-gray-600 mb-4">{category.description}</p>
-              <div className="flex items-center justify-between pt-4 border-t">
-                <span className="text-sm font-semibold text-blue-600">
-                  {category.videosCount}+ Videos
-                </span>
-                <PlayCircle className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform" />
-              </div>
-            </Card>
-          ))}
-        </div>
+        <VideoCarousel />
 
         <div className="mt-16 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-8 md:p-12 text-white text-center">
           <Youtube className="w-16 h-16 mx-auto mb-6" />
-          <h3 className="text-3xl font-bold mb-4">
-            Subscribe to SurgiSense31
-          </h3>
+          <h3 className="text-3xl font-bold mb-4">Subscribe to SurgiSense31</h3>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join thousands of medical students and professionals learning
             surgery the right way. New videos uploaded regularly!
@@ -109,11 +92,7 @@ export default function VideoGallery() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button
-              size="lg"
-              variant="secondary"
-              className="text-lg h-14 px-8"
-            >
+            <Button size="lg" variant="secondary" className="text-lg h-14 px-8">
               Subscribe Now
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
